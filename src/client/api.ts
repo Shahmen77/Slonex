@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+/// <reference types="vite/client" />
+
 const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const apiClient = axios.create({

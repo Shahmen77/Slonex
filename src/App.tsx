@@ -1742,14 +1742,13 @@ function LoginPage() {
 
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
-      console.log('Google tokenResponse:', tokenResponse);
       setIsGoogleLoading(true);
       const minLoaderTime = 1200; // ms
       const start = Date.now();
       try {
-        const credential = (tokenResponse as any).credential;
-        if (!credential) throw new Error('Нет credential');
-        const { token, user } = await authAPI.verifyGoogleToken(credential);
+        const accessToken = (tokenResponse as any).access_token;
+        if (!accessToken) throw new Error('Нет access_token');
+        const { token, user } = await authAPI.verifyGoogleToken(accessToken);
         localStorage.setItem('token', token);
         // Ждём минимум minLoaderTime
         const elapsed = Date.now() - start;
