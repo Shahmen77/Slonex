@@ -1,0 +1,18 @@
+<svg width="128" height="128" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield -->
+  <path d="M80 100 L432 100 L464 220 Q448 400 256 490 Q64 400 48 220 Z" fill="none" stroke="#101820" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- L -->
+  <text x="120" y="270" font-family="Montserrat, Arial, sans-serif" font-size="160" fill="#101820" font-weight="900">L</text>
+  <!-- Magnifier (G inside) -->
+  <circle cx="320" cy="240" r="90" stroke="#101820" stroke-width="20" fill="none"/>
+  <text x="270" y="285" font-family="Montserrat, Arial, sans-serif" font-size="120" fill="#1877F2" font-weight="900">G</text>
+  <!-- Magnifier handle -->
+  <rect x="370" y="320" width="36" height="120" rx="18" transform="rotate(35 370 320)" fill="#101820"/>
+  <!-- Digital lines -->
+  <path d="M390 240 L470 240" stroke="#101820" stroke-width="14"/>
+  <circle cx="490" cy="240" r="18" fill="#1877F2"/>
+  <path d="M390 260 Q440 275 470 320" stroke="#101820" stroke-width="14" fill="none"/>
+  <rect x="465" y="315" width="28" height="28" fill="#1877F2"/>
+  <path d="M390 220 Q450 200 480 150" stroke="#101820" stroke-width="14" fill="none"/>
+  <rect x="475" y="135" width="22" height="22" fill="#1877F2"/>
+</svg> 

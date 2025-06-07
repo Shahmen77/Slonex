@@ -1,0 +1,45 @@
+import axios from 'axios';
+
+// Константы для API
+const API_URL = 'https://testgate.vseplatezhi.ru/api/transaction/create';
+const MERCHANT = '20000154';
+const TERMINAL = '200001541';
+
+// Функция для создания заказа через СБП
+export async function createSBPOrder(orderData) {
+  const { amount, description, clientBackUrl, userIp, userInfo } = orderData;
+  const orderId = Date.now().toString();
+  const token = Buffer.from(JSON.stringify({ userInfo })).toString('base64');
+
+  const payload = {
+    orderId,
+    amount,
+    terminal: TERMINAL,
+    merchant: MERCHANT,
+    userid: '',
+    description,
+    email: '',
+    phone: '',
+    recurrent: 'false',
+    clientBackUrl,
+    userIp,
+    tokenType: 'SBP',
+    token,
+    // sign: '', // если требуется
+  };
+
+  try {
+    const response = await axios.post(API_URL, payload, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.message || err.message);
+  }
+}
+
+// Функция для получения статуса заказа (заглушка, пока не реализована)
+export async function getOrderStatus(orderId) {
+  // TODO: Реализовать запрос к API для получения статуса заказа
+  return { status: 'pending', message: 'Статус заказа пока не обрабатывается' };
+} 

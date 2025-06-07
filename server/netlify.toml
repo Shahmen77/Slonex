@@ -1,0 +1,2 @@
+# ВАЖНО: Netlify не поддерживает полноценный backend на Express/Node.js!
+# Используйте Render, Railway или Heroku для деплоя backend. 

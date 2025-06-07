@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Page {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  content     String
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactInfo {
+  id           String   @id @default(cuid())
+  address      String
+  email        String
+  organization String
+  telegramBot  String
+  inn          String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Translation {
+  id       String @id @default(cuid())
+  key      String
+  language String
+  value    String
+
+  @@unique([key, language])
+}
+
+model PricingPlan {
+  id          String   @id @default(cuid())
+  name        String
+  priceEur    Float
+  priceRub    Float
+  priceAmd    Float
+  description String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

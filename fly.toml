@@ -1,0 +1,10 @@
+app = "my-backend-app"
+
+[build]
+  # Если нужен кастомный build, можно добавить build-args
+
+[env]
+  # Переменные окружения задаются через flyctl secrets set
+
+[experimental]
+  auto_rollback = true 
