@@ -1742,6 +1742,7 @@ function LoginPage() {
 
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
+      console.log('Google tokenResponse:', tokenResponse);
       setIsGoogleLoading(true);
       const minLoaderTime = 1200; // ms
       const start = Date.now();
